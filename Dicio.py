@@ -55,7 +55,7 @@ CLASSES = {
     "Ladino":{
         "Constituição": 1,
         "Força": -2,
-        "Inteligência": 3,
+        "Inteligência": 0,
         "Carisma": 1,
         "Agilidade": 2,
     }
