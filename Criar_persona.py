@@ -2,7 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 import Dicio
 
+
 class Criar_persona():
+        
+    def Criou(self):
+        self.lbl_frm_1.configure(text=self.name.get(), command=self.save_slct)
+        self.btn_sv1.configure(text=self.name.get())
+        self.janela.destroy()
 
     def __init__(self, root):
 
