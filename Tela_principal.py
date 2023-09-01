@@ -1,10 +1,9 @@
 from tkinter import *
 from ttkbootstrap import Style
-from Cadastro_user import Cadastro_user as User
+from Cadastro_user import Cadastro_user as Cad_User
 from Saves import Saves as save
 
 class TelaPrincipal:
-
 
     def __init__(self, master):
         self.janela = master
@@ -41,7 +40,7 @@ class TelaPrincipal:
 
     def cadastrar(self):
         self.limpar_tela()
-        User(self.frm_principal)
+        Cad_User(self.frm_principal)
         
     def logar(self):
         self.limpar_tela()
