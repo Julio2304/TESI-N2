@@ -137,10 +137,10 @@ class Criar_persona():
         
         id=0
         for value in attr.values():
-            x=int(v[id])
+            x=list_var[id].get()
             x+=int(value)
             list_attr[id].config(from_=x)
-            list_var[id].set(x)
+            list_var[id].set(str(x))
             id+=1
 
     

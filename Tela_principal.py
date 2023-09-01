@@ -32,28 +32,30 @@ class TelaPrincipal:
         lbl_senha = Label(self.frm_principal, text='Senha:')
         lbl_senha.grid(row=2, column=0, padx=10, pady=5)
         
-        btn_logar = Button(self.frm_principal, text='Entrar', command=self.saves, width=15)
-        btn_logar.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+        self.btn_logar = Button(self.frm_principal, text='Entrar', command=self.logar, width=15)
+        self.btn_logar.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
-        btn_cadastrar=Button(self.frm_principal, text='Cadastrar',command=self.cadastrar, width=15)
-        btn_cadastrar.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
+        self.btn_cadastrar=Button(self.frm_principal, text='Cadastrar',command=self.cadastrar, width=15)
+        self.btn_cadastrar.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
 
     def cadastrar(self):
         self.limpar_tela()
         Cad_User(self.frm_principal)
         
     def logar(self):
-        self.limpar_tela()
+        self.user=self.ent_user.get()
+        self.senha=self.ent_senha.get()
+        if self.senha=='' or self.user=='':
+            self.btn_logar.config(self.btn_logar.grid(row=4, column=0,columnspan=2))
+            self.btn_cadastrar.config(self.btn_cadastrar.grid(row=5, column=0,columnspan=2))
+            lbl_aviso=Label(self.frm_principal, text='Por favor, preencha todos os campos!')
+            lbl_aviso.grid(row=3,column=0, columnspan=2)
+        else:   
+            self.limpar_tela()
+            save(self.frm_principal)
 
-        btn_voltar_menu=Button(self.frm_principal, text='Sair', command=self.login)
-        btn_voltar_menu.grid(row=1,column=0)
-    
-    def saves(self):
-        self.limpar_tela()
-        save(self.frm_principal)
-
-        btn_voltar_menu=Button(self.frm_principal, text='Voltar', command=self.login)
-        btn_voltar_menu.grid(row=1,column=1, columnspan=2, rowspan=2, padx=5, pady=5)
+            btn_voltar_menu=Button(self.frm_principal, text='Voltar', command=self.login)
+            btn_voltar_menu.grid(row=1,column=1, columnspan=2, rowspan=2, padx=5, pady=5)
 
     def limpar_tela(self):
         for widget in self.frm_principal.winfo_children():
