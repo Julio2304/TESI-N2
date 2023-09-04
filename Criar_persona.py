@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import Dicio
+from bdcria import conecta, SELECT_ALL_CLASSES, SELECT_ALL_RACAS
 
 
 class Criar_persona():
@@ -111,6 +112,7 @@ class Criar_persona():
         
 
         race=Dicio.RACES[self.race]
+<<<<<<< HEAD
         print(race)
         # id=0
         # list_attr=[self.con, self.For, self.int, self.car, self.agi]
@@ -120,6 +122,21 @@ class Criar_persona():
         #     list_var[id].set(value)
         #     id+=1
         # self.cbx_classe.config(state='readonly')
+=======
+        connection, cursor = conecta()
+        cursor.execute(SELECT_ALL_CLASSES)
+        classes = cursor.fetchall()
+        print(classes)
+
+        id=0
+        list_attr=[self.con, self.For, self.int, self.car, self.agi]
+        list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
+        for value in race.values():
+            list_attr[id].config(from_=value)
+            list_var[id].set(value)
+            id+=1
+        self.cbx_classe.config(state='readonly')
+>>>>>>> dad0d9ee7a65dd8037237f9928022c02a2e88d5c
 
 
     def class_attr(self, event = None):
@@ -136,6 +153,7 @@ class Criar_persona():
         #     x=int(list_attr[id].get())
         #     v.append(x)
         
+<<<<<<< HEAD
         # id=0
         # for value in attr.values():
         #     x=int(v[id])
@@ -143,6 +161,15 @@ class Criar_persona():
         #     list_attr[id].config(from_=x)
         #     list_var[id].set(x)
         #     id+=1
+=======
+        id=0
+        for value in attr.values():
+            x=list_var[id].get()
+            x+=int(value)
+            list_attr[id].config(from_=x)
+            list_var[id].set(str(x))
+            id+=1
+>>>>>>> dad0d9ee7a65dd8037237f9928022c02a2e88d5c
 
     
 

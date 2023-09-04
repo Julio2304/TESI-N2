@@ -22,7 +22,7 @@ RACES = {
         "Carisma": 0,
         "Agilidade": 2,
     },
-    "Demonio":{
+    "Demônio":{
         "Constituição": 2,
         "Força": 2,
         "Inteligência": 2,

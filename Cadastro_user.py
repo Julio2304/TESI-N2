@@ -43,6 +43,8 @@ class Cadastro_user():
             Cadastro_user.Users.append(usuario)
             self.limpar_tela()
             Saves(self.janela)
+
+        
     
     def limpar_tela(self):
         for widget in self.janela.winfo_children():
