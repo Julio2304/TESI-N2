@@ -5,21 +5,21 @@ class Persona():
     def __init__(self,root):
         self.janela=root
         #Frame 0
-        frame0 = LabelFrame(janela, text="Você é um:")
+        frame0 = LabelFrame(self.janela, text="Você é um:")
         frame0.grid(row=0, column=0)
 
         lbl_suaraca = Label(frame0, text="ORC")
         lbl_suaraca.pack()
 
         #Frame 1
-        frame1 = LabelFrame(janela, text="A classe escolhida foi:")
+        frame1 = LabelFrame(self.janela, text="A classe escolhida foi:")
         frame1.grid(row=0, column=1)
 
         lbl_suaclasse = Label(frame1, text="GUERREIRO")
         lbl_suaclasse.pack()
 
         #Frame 2
-        frame2 = LabelFrame(janela, text="Pontos de atributos:")
+        frame2 = LabelFrame(self.janela, text="Pontos de atributos:")
         frame2.grid(row=1, column=0, columnspan=2)
 
         lbl_vocepontos = Label (frame2, text='Seus pontos distribuidos estão abaixo:')
@@ -43,5 +43,5 @@ class Persona():
         spb_agil = Spinbox(frame2, from_=0, to=8, wrap=True, width=3)
         spb_agil.grid(row=3, column=4, columnspan=5)
 
-        bnt_alterar = Button (janela, text='Confirmar alterações', command=janela.destroy)
+        bnt_alterar = Button (self.janela, text='Confirmar alterações', command=self.janela.destroy)
         bnt_alterar.grid(row = 8, column= 0, columnspan=5)

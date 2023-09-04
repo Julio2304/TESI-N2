@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import Dicio
+from bdcria import conecta, SELECT_ALL_CLASSES, SELECT_ALL_RACAS
 
 
 class Criar_persona():
@@ -111,6 +112,10 @@ class Criar_persona():
         
 
         race=Dicio.RACES[self.race]
+        connection, cursor = conecta()
+        cursor.execute(SELECT_ALL_CLASSES)
+        classes = cursor.fetchall()
+        print(classes)
 
         id=0
         list_attr=[self.con, self.For, self.int, self.car, self.agi]
