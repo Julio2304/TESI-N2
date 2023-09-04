@@ -39,7 +39,7 @@ class Criar_persona():
         lbl_classe.grid(row = 4, column= 1, columnspan=5)
 
         Classes = ['Guerreiro', 'Feiticeiro', 'Bardo', 'Ladino']
-        self.cbx_classe = ttk.Combobox(self.persona, values = Classes, state = 'disable')
+        self.cbx_classe = ttk.Combobox(self.persona, values = Classes, state = 'readonly')
         self.cbx_classe.grid(row = 5, column= 1, columnspan=5)
 
         self.cbx_classe.bind('<<ComboboxSelected>>', self.class_attr)
@@ -111,37 +111,38 @@ class Criar_persona():
         
 
         race=Dicio.RACES[self.race]
-
-        id=0
-        list_attr=[self.con, self.For, self.int, self.car, self.agi]
-        list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
-        for value in race.values():
-            list_attr[id].config(from_=value)
-            list_var[id].set(value)
-            id+=1
-        self.cbx_classe.config(state='readonly')
+        print(race)
+        # id=0
+        # list_attr=[self.con, self.For, self.int, self.car, self.agi]
+        # list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
+        # for value in race.values():
+        #     list_attr[id].config(from_=value)
+        #     list_var[id].set(value)
+        #     id+=1
+        # self.cbx_classe.config(state='readonly')
 
 
     def class_attr(self, event = None):
         self.classe=self.cbx_classe.get()
     
         attr=Dicio.CLASSES[self.classe]
+        print(attr)
 
-        id=0
-        v=[]
-        list_attr=[self.con, self.For, self.int, self.car, self.agi]
-        list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
-        for i in list_attr:
-            x=int(list_attr[id].get())
-            v.append(x)
+        # id=0
+        # v=[]
+        # list_attr=[self.con, self.For, self.int, self.car, self.agi]
+        # list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
+        # for i in list_attr:
+        #     x=int(list_attr[id].get())
+        #     v.append(x)
         
-        id=0
-        for value in attr.values():
-            x=int(v[id])
-            x+=int(value)
-            list_attr[id].config(from_=x)
-            list_var[id].set(x)
-            id+=1
+        # id=0
+        # for value in attr.values():
+        #     x=int(v[id])
+        #     x+=int(value)
+        #     list_attr[id].config(from_=x)
+        #     list_var[id].set(x)
+        #     id+=1
 
     
 
