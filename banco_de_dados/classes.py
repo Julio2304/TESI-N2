@@ -79,14 +79,13 @@ def limpa_todos():
     conexao.close()
 
 # limpa_todos()
-insere_valores('guerreiro', '0', '0', '546', '3', '5')
-insere_valores('dasdsa', '0', '0', '546', '3', '5')
-insere_valores('guerr2', '0', '0', '546', '3', '5')
-insere_valores('aksdkasdk', '0', '0', '546', '3', '5')
-insere_valores('kakkakakak', '0', '0', '546', '3', '5')
+insere_valores('Guerreiro', '0', '3', '0', '0', '0')
+insere_valores('Ladino', '0', '0', '4', '0', '0')
+insere_valores('Feiticeiro', '0', '0', '0', '3', '0')
+insere_valores('Bardo', '0', '0', '0', '0', '4')
 mostra_todos()
 print('\nseparação aqui\n')
-seleciona_por_nome('guerreiro')
+seleciona_por_nome('Guerreiro')
 seleciona_por_id('2')
     
     

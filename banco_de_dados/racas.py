@@ -72,7 +72,10 @@ def limpa_todos():
     conexao.close()
 
 # limpa_todos()
-insere_valores('orcH', '1', '9999', '546', '3', '5')
+insere_valores('Orc', 3, 4, -2, -1, 2)
+insere_valores('Humano', 1, -2, -1, 4, 2)
+insere_valores('Elfo', 1, 1, 3, -3, 2)
+insere_valores('Demônio', 2, -1, 3, -2, 3,)
 mostra_todos()
     
     
