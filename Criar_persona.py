@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import Dicio
 from bdcria import conecta, SELECT_ALL_CLASSES, SELECT_ALL_RACAS
+import sqlite3
 
 
 class Criar_persona():
@@ -98,7 +99,7 @@ class Criar_persona():
         self.atributos.grid(row=0,column=0)
         
         #---------------------------------------------------------------------------------------------------------------
-        bnt_criar = tk.Button (self.janela, text='Criar', command=lambda: self.class_attr())
+        bnt_criar = tk.Button (self.janela, text='Criar', command=lambda: self.inserir_bd())
         bnt_criar.grid(row = 1, column= 0, columnspan=2, ipadx=15, pady=10)
        
 
@@ -112,22 +113,7 @@ class Criar_persona():
         
 
         race=Dicio.RACES[self.race]
-<<<<<<< HEAD
         print(race)
-        # id=0
-        # list_attr=[self.con, self.For, self.int, self.car, self.agi]
-        # list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
-        # for value in race.values():
-        #     list_attr[id].config(from_=value)
-        #     list_var[id].set(value)
-        #     id+=1
-        # self.cbx_classe.config(state='readonly')
-=======
-        connection, cursor = conecta()
-        cursor.execute(SELECT_ALL_CLASSES)
-        classes = cursor.fetchall()
-        print(classes)
-
         id=0
         list_attr=[self.con, self.For, self.int, self.car, self.agi]
         list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
@@ -136,7 +122,6 @@ class Criar_persona():
             list_var[id].set(value)
             id+=1
         self.cbx_classe.config(state='readonly')
->>>>>>> dad0d9ee7a65dd8037237f9928022c02a2e88d5c
 
 
     def class_attr(self, event = None):
@@ -145,32 +130,19 @@ class Criar_persona():
         attr=Dicio.CLASSES[self.classe]
         print(attr)
 
-        # id=0
-        # v=[]
-        # list_attr=[self.con, self.For, self.int, self.car, self.agi]
-        # list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
-        # for i in list_attr:
-        #     x=int(list_attr[id].get())
-        #     v.append(x)
+        id=0
+        v=[]
+        list_attr=[self.con, self.For, self.int, self.car, self.agi]
+        list_var=[self.var, self.var1, self.var2, self.var3, self.var4]
+        for i in list_attr:
+            x=int(list_attr[id].get())
+            v.append(x)
         
-<<<<<<< HEAD
-        # id=0
-        # for value in attr.values():
-        #     x=int(v[id])
-        #     x+=int(value)
-        #     list_attr[id].config(from_=x)
-        #     list_var[id].set(x)
-        #     id+=1
-=======
         id=0
         for value in attr.values():
-            x=list_var[id].get()
+            x=int(v[id])
             x+=int(value)
             list_attr[id].config(from_=x)
-            list_var[id].set(str(x))
+            list_var[id].set(x)
             id+=1
->>>>>>> dad0d9ee7a65dd8037237f9928022c02a2e88d5c
 
-    
-
-    
